@@ -64,12 +64,12 @@ const ClioMax = new Renault('rouge', 'diesel', 'clio');
 ClioMax.moveForward();
 console.log(ClioMax.hasStarted);
 
-var complexe = (a, b) => {
-  if (a > b) {
-    return a;
-  } else {
-    return b;
-  }
-}
-
-console.log(complexe(2, 3));
+// var complexe = (a, b) => {
+//   if (a > b) {
+//     return a;
+//   } else {
+//     return b;
+//   }
+// }
+//
+// console.log(complexe(2, 3));
