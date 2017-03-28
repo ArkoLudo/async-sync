@@ -17,20 +17,20 @@ class Heros {
     console.log(this.name + " s'avance au combat... ");
   }
   calcDamages(){
-    let damages = Math.floor((Math.random) * (this.stregth / 4) + 1);
+    let damages = Math.floor((Math.random) * (this.strength / 4) + 1);
     return damages;
   }
   calcHits(damages){
     let hits = damages - (Math.floor((Math.random) * 4) + 1);
     return hits;
   }
-  fight(life, damages, hits){
+  fight(damages, hits){
     let fight = this.life - (damages * hits);
     return fight;
   }
-  isDead(dead){
+  isDead(){
     if (this.life > 0 && this.dead == false) {
-      console.log("Vous encaissez le coup ! ");
+      console.log("Vous encaissez le coup ! Il vous reste " + this.life + " points de vie.");
     }
     else {
       console.log("Le coup vous a été fatal ! Vous tombez vaillament au combat...");
@@ -53,7 +53,11 @@ class Mage extends Heros {
 const heros1 = new Guerrier("Luc", 100, 15, 4, "La grosse Berta");
 heros1.presentHero();
 heros1.moveToFight();
+heros1.isDead();
 
 const heros2 = new Mage("Albert", 85, 8, 12, "La Braguette Magique");
 heros2.presentHero();
 heros2.moveToFight();
+
+const combat = new Fight();
+combat.startFight();
